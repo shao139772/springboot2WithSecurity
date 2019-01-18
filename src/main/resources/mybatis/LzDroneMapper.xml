@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ubisys.drone.modules.base.dao.mapper.LzDroneMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ubisys.drone.modules.base.entity.LzDrone">
+        <id column="id" property="id"/>
+        <result column="attacking" property="attacking"/>
+        <result column="can_attack" property="canAttack"/>
+        <result column="can_takeover" property="canTakeover"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="deleted_time" property="deletedTime"/>
+        <result column="image" property="image"/>
+        <result column="name" property="name"/>
+        <result column="state" property="state"/>
+        <result column="whitelisted" property="whitelisted"/>
+        <result column="droneid" property="droneid"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, attacking, can_attack AS canAttack, can_takeover AS canTakeover, created_time AS createdTime, deleted_time AS deletedTime, image, name, state, whitelisted, droneid
+    </sql>
+
+</mapper>

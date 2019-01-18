@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>无人机侦测</title>
+    <link rel="stylesheet" href="css/UAVDetection.css">
+    <script src="js/comm/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=yaDRGoon5YoRzAAwH781yUgn"></script>
+    <script src="js/UAVDetection.js"></script>
+    <script src="js/defensiveMap.js" type="text/javascript"> </script>
+    <script src="js/scrollbot/scrollbot.js" type="text/javascript"> </script>
+    <style>
+        .nav .left .leftBottom .table>tbody>tr>td>input{
+            color:#00284C;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="left">
+            <div id="mapDiv" class="leftTop">
+              
+            </div>
+            <div  id="UDEventsContainer"  class="leftBottom test-1">
+                <table class="table">
+                    <caption class="cap">上下文表格布局</caption>
+                    <thead>
+                        <tr>
+                            <th>发现时间</th>
+                            <th>维持时间</th>
+                            <th>机型</th>
+                            <th>识别码</th>
+                            <th>经纬度</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody id="UDEventsTBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="right">
+            <div class="tou">
+                <p>已识别无人机</p>
+            </div>
+            <div class="rightBtn">
+                <div class="rightZ">
+                    <span>自动攻击</span>
+                    <div class="button" style="margin-left: 2%;margin-top: 2%;">
+                        <input class="tgl tgl-light" onchange="autoAtCkChanged(this);" id="autoAtCk" type="checkbox" />
+                        <label class="tgl-btn" for="autoAtCk"></label>
+                    </div>
+                </div>
+                <div class="rightY">
+                    <img src="image/喇叭.png" />
+                </div>
+            </div>
+            <div id="UDDronesDiv" class="rightData test-1">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        UDEventsUtil.processUDEvents();
+        UDDronesUtil.processUDDrones();
+        mapUtil.initMap("mapDiv");
+        mapUtil.addOverlays();
+    });
+    let autoAtCkChanged = function (autoAtCk) {
+        if (autoAtCk.checked) {
+            //设置为自动攻击的操作
+        } else {
+            //设置取消自动攻击的操作
+        }
+    }
+    let scroll=function(selector){
+       return new scrollbot(selector,10).setStyle({
+			"background":"#87CAE4",
+			"z-index":"2"
+		},{
+			"background":"#072645"
+        });
+    };
+    //UDEventsContainer =scroll("#UDEventsContainer");
+    // UDDronesDiv=scroll("#UDDronesDiv");
+</script>
+
+</html>

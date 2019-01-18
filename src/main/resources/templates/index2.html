@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页测试</title>
+
+    <script src="/js/fetch.js"></script>
+    <script src="/js/jquery-3.3.1.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+
+<input id="login" onclick="login();" type="button" value="登录">
+<input id="getDrone" onclick="getDrone();" type="button" value="无人机">
+
+
+<script type="text/javascript">
+
+    function login() {
+        console.log('login');
+    /*    fetch('http://192.168.1.105:8080/sys/sysUser/test', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            mode: "cors",
+            body: JSON.stringify({
+                username: 'demo',
+                password: 'sercet',
+            })
+        }).then((response) => {
+            console.log('ok',response);
+            if (response.ok) {
+                return response.text();
+            } else {
+                return {status:response.status};
+            }
+        })*/
+
+
+        $.ajax({
+            url : 'http://192.168.1.105:8080/sys/sysUser/test',
+            type : 'post',
+            dataType : "json",
+            success : function(data) {
+             console.log('data',data);
+            },
+            data : {
+                username: 'demo',
+                password: 'sercet',
+            },
+        });
+
+
+    }
+
+
+    function getDrone() {
+        console.log('getDrone');
+    }
+
+
+</script>
+
+<strong>我是首页</strong>
+</body>
+</html>

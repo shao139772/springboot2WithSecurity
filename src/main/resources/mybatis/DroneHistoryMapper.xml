@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ubisys.drone.modules.base.dao.mapper.DroneHistoryMapper">
+    <!-- 查询反制信息（按天统计） -->
+    <select id="queryDroneHistoryStatisticsByDate" resultType="com.ubisys.drone.modules.base.model.DroneHistory">
+        SELECT DATE_FORMAT(created_time,'%Y-%m-%d') AS `time`, COUNT(*) AS `count`,
+            CONCAT_WS('',(cast(TRUNCATE(SUM(ttl) % 86400 % 3600 / 60,0) as signed )),'min',
+                    (cast(TRUNCATE(SUM(ttl) % 86400 % 3600 % 60,0) as signed )),'s') AS duration,
+            SUM(detected_freq_khz LIKE '5%') AS fiveHZ,
+            SUM(detected_freq_khz LIKE '2%') AS twoHZ
+        FROM lz_drone_history
+        WHERE 1=1
+        <if test="map.whereTime != null and map.whereTime != '' ">
+            AND DATE_FORMAT(created_time,'%Y-%m-%d') = #{map.whereTime}
+        </if>
+        GROUP BY DATE_FORMAT(created_time,'%Y-%m-%d')
+        <if test="map.pageNumber != null and map.pageNumber !='' and map.pageSize != null and map.pageSize != '' ">
+            LIMIT #{map.pageNumber},#{map.pageSize};
+        </if>
+        <if test="map.sort != null and map.sort !='' and map.order != null and map.order != '' ">
+            ORDER BY ${map.sort} ${map.order};
+        </if>
+    </select>
+    <!-- 查询反制信息（按天统计）[条数] -->
+    <select id="queryDroneHistoryStatisticsCountByDate" resultType="int">
+        SELECT COUNT(*) FROM (
+        SELECT DATE_FORMAT(created_time,'%Y-%m-%d') AS `time`, COUNT(*) AS `count`,
+        CONCAT_WS('',(cast(TRUNCATE(SUM(ttl) % 86400 % 3600 / 60,0) as signed )),'min',
+        (cast(TRUNCATE(SUM(ttl) % 86400 % 3600 % 60,0) as signed )),'s') AS duration,
+        SUM(detected_freq_khz LIKE '5%') AS fiveHZ,
+        SUM(detected_freq_khz LIKE '2%') AS twoHZ
+        FROM lz_drone_history
+        WHERE 1=1
+        <if test="map.whereTime != null and map.whereTime != '' ">
+            AND DATE_FORMAT(created_time,'%Y-%m-%d') = #{map.whereTime}
+        </if>
+        GROUP BY DATE_FORMAT(created_time,'%Y-%m-%d'))T
+    </select>
+
+    <delete id="delDroneHistoryEvents">
+        DELETE FROM lz_drone_history WHERE DATE_FORMAT(created_time,'%Y-%m-%d') in (${times})
+    </delete>
+</mapper>

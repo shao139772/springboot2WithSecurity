@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ubisys.drone.modules.base.dao.mapper.UbDroneMapper">
+    <select id="allAlarmInformation"
+            parameterType="java.util.Map"
+            resultType="com.ubisys.drone.modules.base.entity.UbisysDrone">
+        SELECT
+        ldh.created_time AS created_time,
+        ldh.deleted_time AS deleted_time,
+        udi.serial_number AS serial_number,
+        ldh.droneid AS droneid,
+        ldh.`name` AS 'name',
+        ldh.lat AS lat,
+        ldh.lng AS lng,
+        ldh.ttl AS ttl,
+        ldh.detected_freq_khz AS detected_freq_khz,
+        ldh.id AS lzdroneId,
+        ldh.id AS id
+        FROM
+        (
+        lz_drone_history ldh
+        LEFT JOIN ub_drone_info udi ON (
+        (
+        ldh.droneid = udi.chip_number
+        )
+        )
+        ) WHERE 1 = 1
+        <if test="param.serialNumber != null and param.serialNumber !='' ">
+            and udi.serial_number = #{param.serialNumber ,jdbcType=VARCHAR}
+        </if>
+        <if test="param.time != null and param.time !='' ">
+            AND DATE_FORMAT(created_time,'%Y-%m-%d') = #{param.time}
+        </if>
+        GROUP BY ldh.created_time DESC limit #{param.startRow ,jdbcType=INTEGER} , #{param.pageSize ,jdbcType=INTEGER}
+    </select>
+
+    <select id="countAlarmInformation" resultType="long"
+            parameterType="java.util.Map">
+        SELECT count(*) from lz_drone_history where 1 = 1
+        <if test="param.serialNumber != null and param.serialNumber !='' ">
+            and serial_number = #{param.serialNumber ,jdbcType=VARCHAR}
+        </if>
+    </select>
+</mapper>

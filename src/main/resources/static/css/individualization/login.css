@@ -1,0 +1,91 @@
+.login{
+	width: 300px;
+    height: 240px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -60px;
+    border-radius: 10px;
+}
+.prompt{
+	color:#999999;
+}
+.noHint{
+	color:#000000;
+}
+.login_info{
+    width: 270px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.login_info input[type="text"],input[type="password"]{
+    width: 292px;
+    height: 45px;
+    padding-left: 75px;
+    background-color: #f1f9f8;
+    border-radius: 39px;
+    opacity: 0.75;
+    outline-style: none;
+    outline-width: 0px;
+    border: none;
+    border-style: none;
+    text-shadow: none;
+    -webkit-appearance: none;
+    outline-color: transparent;
+    box-shadow: none;
+}
+.verificationImg{
+	width: 175px;
+}
+.errorPrompt{
+	height: 30px;
+	color: red;
+    line-height: 4;
+}
+
+#userLoginName {
+    background: url(../../img/accountsInput.png) no-repeat 15px 5px /88%;
+    margin-left: -15px;
+}
+
+#showPwd{
+    background: url(../../img/passwordInput.png) no-repeat 15px 5px /88%;
+    margin-left: -15px;
+}
+
+#userLoginPassWord{
+    background: url(../../img/passwordInput.png) no-repeat 15px 5px /88%;
+    margin-left: -15px;
+}
+
+.loginButton{
+    width: 371px;
+    height: 55px;
+    background: url(../../img/loginButton.png) no-repeat 15px 5px /88%;
+    margin-left: -15px;
+    box-shadow: inset 1px -9px 0px 0px rgba(194, 193, 193, 0.59);
+    border-radius: 39px;
+    outline-style: none;
+    outline-width: 0px;
+    border: none;
+    border-style: none;
+    text-shadow: none;
+    -webkit-appearance: none;
+    outline-color: transparent;
+    box-shadow: none;
+}
+
+#isCookie{
+    float: left;
+    color: #ffffff;
+}
+
+#retrieve{
+    float: right;
+    margin-right: -45px;
+}
+#retrieve a{
+    text-decoration:none;
+    color: #ffffff;
+}

@@ -1,0 +1,20 @@
+/** 全局按钮样式 */
+.UAVButton{
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.btn-blue{
+    background-color: #67c7ff;
+    color: #ffffff;
+}
+.btn-lightGreen{
+    background-color: #3ee07b;
+    color: #ffffff;
+}
+.btn-lightGray{
+    background-color: #999999;
+    color: #ffffff;
+}

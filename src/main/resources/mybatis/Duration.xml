@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ubisys.drone.modules.base.dao.mapper.DurationMapper">
+    <select id="findDuration" resultType="com.ubisys.drone.modules.base.entity.Duration">
+
+        SELECT
+        CASE
+        WHEN ttl &lt;21 and ttl&gt;0 THEN '0~20'
+        WHEN ttl&lt; 41 and ttl&gt;20  THEN '20~40'
+        WHEN ttl&lt; 61 and ttl&gt;40  THEN '40~60'
+        WHEN ttl&lt; 81 and ttl&gt;60 THEN '60~80'
+        WHEN ttl&lt; 101 and ttl&gt;80 THEN '80~100'
+        WHEN ttl&lt; 121 and ttl&gt;100 THEN '100~120'
+        WHEN  ttl&gt;120 THEN '大于120'
+        ELSE 0 END serialNum,
+        COUNT(*)  as quantity FROM    lz_drone
+        GROUP BY
+        CASE WHEN ttl&lt; 21 and ttl&gt;0 THEN '0~20'
+        WHEN ttl&lt; 41 and ttl&gt;20  THEN '20~40'
+        WHEN ttl&lt; 61 and ttl&gt;40  THEN '40~60'
+        WHEN ttl&lt; 81 and ttl&gt;60 THEN '60~80'
+        WHEN ttl&lt; 101 and ttl&gt;80 THEN '80~100'
+        WHEN ttl&lt; 121 and ttl&gt;100 THEN '100~120'
+        WHEN  ttl&gt;120 THEN '大于120'
+        ELSE 0 END ;
+    </select>
+
+    <select id="findCreatTime" resultType="com.ubisys.drone.modules.base.entity.Duration">
+
+       SELECT
+        CASE
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&lt; '04:00' THEN '0:00~4:00'
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&lt; '08:00' and DATE_FORMAT(created_time,'%H:%i:%s') &gt;  '03:59'  THEN '4:00~8:00'
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&lt; '12:00' and DATE_FORMAT(created_time,'%H:%i:%s') &gt;  '07:59'  THEN '8:00~12:00'
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&lt; '16:00' and DATE_FORMAT(created_time,'%H:%i:%s') &gt;  '11:59' THEN '12:00~16:00'
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&lt; '20:00' and DATE_FORMAT(created_time,'%H:%i:%s') &gt;  '15:59' THEN '16:00~20:00'
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&gt; '20:00' THEN '20:00~24:00'
+        ELSE 0 END serialNum,
+        COUNT(*)  as quantity FROM    lz_drone
+        GROUP BY
+        CASE
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&lt; '04:00' THEN '0:00~4:00'
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&lt; '08:00' and DATE_FORMAT(created_time,'%H:%i:%s') &gt;  '03:59'  THEN '4:00~8:00'
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&lt; '12:00' and DATE_FORMAT(created_time,'%H:%i:%s') &gt;  '07:59'  THEN '8:00~12:00'
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&lt; '16:00' and DATE_FORMAT(created_time,'%H:%i:%s') &gt;  '11:59' THEN '12:00~16:00'
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&lt; '20:00' and DATE_FORMAT(created_time,'%H:%i:%s') &gt;  '15:59' THEN '16:00~20:00'
+        WHEN DATE_FORMAT(created_time,'%H:%i:%s')&gt; '20:00' THEN '20:00~24:00'
+        ELSE 0 END ;
+    </select>
+
+    <select id="findFreq" resultType="com.ubisys.drone.modules.base.entity.Duration">
+
+        SELECT
+        CASE
+        WHEN detected_freq_khz &gt; '4999999' THEN
+        '5.8 HZ'
+        WHEN detected_freq_khz &lt; '3000000' THEN
+        '2.4 HZ'
+        ELSE
+        0
+        END serialNum,
+        COUNT(*) AS quantity
+        FROM
+        lz_drone_history
+        GROUP BY
+        CASE
+        WHEN detected_freq_khz &gt; '4999999' THEN
+        '5.8'
+        WHEN detected_freq_khz &lt; '3000000' THEN
+        '2.4'
+        ELSE
+        0
+        END;
+    </select>
+
+</mapper>

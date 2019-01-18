@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #072645;
+    display: flex;
+    justify-content: space-between;
+}
+.test-1::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.test-1::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: #87CAE4;
+}
+.test-1::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #072645;
+}
+.nav{
+    width: 99%;
+    height: 98%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.nav .left{
+    width: 60%;
+    height: 100%;
+}
+.nav .left .leftTop{
+     width: 100%;
+     height: 55%;
+     border: 1px solid #4473BB;
+     border-radius: 8px;
+ }
+.nav .left .leftTop img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+.nav .left .leftBottom{
+    width: 100%;
+    height: 44%;
+    background-color: #223A66;
+    border: 1px solid #4473BB;
+    margin-top: 1%;
+    border-radius: 8px;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+.nav .left .leftBottom table{
+    width: 100%;
+    border-collapse:collapse;
+    border-spacing:0;
+    margin:0;
+    padding:0;
+    border:none;
+}
+.nav .left .leftBottom table .cap{
+    color: #0FC8DC;
+    text-align: left;
+    margin-left: 3%;
+}
+.nav .left .leftBottom table>thead>{
+    width: 100%;
+}
+.nav .left .leftBottom table>thead>tr>th{
+    height: 35px;
+    color: #fff;
+    font-size: 14px;
+    width: 1%;
+}
+.nav .left .leftBottom table>tbody>tr>td{
+    height: 35px;
+    color: #fff;
+    font-size: 14px;
+    text-align:center;
+    border: 0;
+}
+.nav .left .leftBottom table tbody tr:nth-of-type(odd){
+    background-color: #00284C;
+}
+.nav .right{
+    width: 39.5%;
+    height: 100%;
+    margin-left: 0.5%;
+    background-color: #223A66;
+    border: 1px solid #4473BB;
+    border-radius: 8px;
+}
+.nav .right .tou{
+    width: 100%;
+    height: 5%;
+}
+.nav .right .tou p{
+    color: #12C3CE;
+    margin-left: 5%;
+    padding-top: 2%;
+}
+.nav .right .rightBtn{
+    width: 100%;
+    height: 5%;
+    background-color: #657694;
+    display: flex;
+    justify-content: space-around;
+}
+.tgl {
+    display: none;
+}
+.tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
+    box-sizing: border-box;
+}
+.tgl::-moz-selection, .tgl:after::-moz-selection, .tgl:before::-moz-selection, .tgl *::-moz-selection, .tgl *:after::-moz-selection, .tgl *:before::-moz-selection, .tgl + .tgl-btn::-moz-selection {
+    background: none;
+}
+.tgl::selection, .tgl:after::selection, .tgl:before::selection, .tgl *::selection, .tgl *:after::selection, .tgl *:before::selection, .tgl + .tgl-btn::selection {
+    background: none;
+}
+.tgl + .tgl-btn {
+    outline: 0;
+    display: block;
+    width: 50px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 40%;
+    height: 100%;
+}
+.tgl + .tgl-btn:after {
+    left: 0;
+}
+.tgl + .tgl-btn:before {
+    display: none;
+}
+.tgl:checked + .tgl-btn:after {
+    left: 50%;
+}
+.tgl-light + .tgl-btn {
+    background: #f0f0f0;
+    border-radius: 2em;
+    padding: 2px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
+.tgl-light + .tgl-btn:after {
+    border-radius: 50%;
+    background: #fff;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.tgl-light:checked + .tgl-btn {
+    background: #45A5FC;
+}
+.nav .right .rightBtn .rightZ{
+    width: 80%;
+    height: 100%;
+    display: flex;
+}
+.nav .right .rightBtn .rightZ span{
+    color: #fff;
+    display: inline-block;
+    padding-top: 2%;
+    padding-left: 5%;
+}
+.nav .right .rightBtn .rightY{
+    width: 20%;
+    height: 100%;
+}
+.nav .right .rightBtn .rightY img{
+    height: 70%;
+    margin-top: 5%;
+}
+.nav .right .rightData{
+    width: 100%;
+    height: 90%;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+.nav .right .rightData .rightName{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 16px;
+    padding-top: 2%;
+}
+.nav .right .rightData .rightNameY{
+    display: flex;
+    justify-content: space-around;
+    color:#7DC197;
+    font-size: 14px;
+    margin-top: 2%;
+}
+.nav .right .rightData .rightNameN{
+    display: flex;
+    justify-content: space-around;
+    color: #B964A1;
+    font-size: 14px;
+    margin-top: 2%;
+}
+.nav .right .rightData .rightName>li{
+    width: 10%;
+}
+.nav .right .rightData .rightNames>li{
+    width: 14%;
+}

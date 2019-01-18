@@ -1,0 +1,3 @@
+#springboot¼àÌýÆ÷
+org.springframework.context.ApplicationListener=com.ubisys.drone.config.listener.ApplicationPreparedEventListener,com.ubisys.drone.config.listener.ApplicationReadyEventListener,com.ubisys.drone.config.listener.ApplicationStartedEventListener
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ubisys.drone.modules.base.dao.mapper.DronStatisticsMapper">
+    <select id="findDronValue" resultType="com.ubisys.drone.modules.base.entity.DronStatistics">
+      SELECT COUNT(l.id) as 'dronValue',
+l.`name` as `dronName`
+FROM lz_drone l  GROUP BY l.`name`
+    </select>
+
+
+    <!-- 统计报警数 -->
+    <select id="countAlarms" resultType="java.lang.Long">
+        SELECT COUNT(hists.id) as alarms  from lz_drone_history hists
+    </select>
+
+
+    <!-- 统计白名单个数 -->
+    <select id="countWhites" resultType="java.lang.Long">
+        SELECT COUNT(ll.id) as whites from ub_white_list ll
+    </select>
+
+
+    <!-- 站点个数 -->
+    <select id="countSensor" resultType="java.lang.Long">
+        SELECT COUNT(sensors.id)  from lz_sensor  sensors
+    </select>
+
+
+    <!-- 打击次数 -->
+    <select id="countAttacks" resultType="java.lang.Long">
+       SELECT COUNT( DISTINCT history.droneid)  as attacks from lz_drone_history history  WHERE  history.attack_time  is NOT NULL
+    </select>
+</mapper>

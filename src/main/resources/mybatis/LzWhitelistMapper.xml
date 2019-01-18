@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ubisys.drone.modules.base.dao.mapper.LzWhitelistMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ubisys.drone.modules.base.entity.LzWhitelist">
+        <id column="id" property="id" />
+        <result column="drone_id" property="droneId" />
+        <result column="dronetype" property="dronetype" />
+        <result column="is_white" property="isWhite" />
+        <result column="is_lz" property="isLz" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, drone_id AS droneId, dronetype, is_white AS isWhite, is_lz AS isLz
+    </sql>
+
+</mapper>

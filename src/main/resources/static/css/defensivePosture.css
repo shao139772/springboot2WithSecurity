@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #072645;
+    display: flex;
+    justify-content: space-between;
+}
+.nav{
+    width: 99%;
+    height: 98%;
+    margin: auto;
+}
+.header{
+    width: 100%;
+    height: 10%;
+    margin-bottom: 0.5%;
+    border: 1px solid #4473BB;
+    background-color: #19355C;
+    display: flex;
+    justify-content: space-between;
+}
+.header .zuo{
+     width: 14%;
+     height: 100%;
+ }
+.header .zuo img{
+    height: 80%;
+    margin-top: 9px;
+    margin-left: 20px;
+}
+.header .zhong{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+.header .zhong  .log{
+    width: 20%;
+    display: flex;
+    margin: auto;
+}
+.header .zhong  .log .zhongZ{
+    width: 40%;
+    height: 100%;
+    margin-top: 4%;
+}
+.header .zhong  .log .zhongZ img{
+    width: 100%;
+
+}
+.header .zhong  .log .zhongY{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    font-size: 14px;
+}
+.header .zhong  .log p:nth-of-type(2){
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 5%;
+    color:#fff;
+}
+.header .you{
+    width: 18%;
+    height: 100%;
+    display: flex;
+}
+.header .you .youZ{
+    width: 30%;
+    margin: auto;
+}
+.header .you .youY{
+    width: 70%;
+    margin: auto;
+    font-size: 14px;
+}
+.header .you .youY p{
+
+    color: #CFD6D6;
+}
+
+.middle{
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5%;
+}
+.middle .middleLeft{
+    width: 25%;
+    height: 100%;
+    border: 1px solid #4473BB;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap:wrap;
+}
+.test-1::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.test-1::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: #87CAE4;
+}
+.test-1::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #072645;
+}
+.middle .middleLeft .mlHeader{
+    width: 100%;
+    height: 7%;
+    display: flex;
+    background-color:  #223A66;
+    border-radius: 8px 8px 0 0;
+}
+.middle .middleLeft .mlHeader span:nth-of-type(1){
+    color:#13CBEF;
+    margin-left: 10%;
+    display:inline-block;
+    padding-top: 5px;
+}
+.middle .middleLeft .mlHeader span:nth-of-type(2){
+    color:#fff;
+    margin-left: 65%;
+    display:inline-block;
+    padding-top: 5px;
+}
+.middle .middleLeft .mlDay{
+    width: 100%;
+    height: 5%;
+    background-color: #334B72;
+}
+.middle .middleLeft .mlDay p{
+    color: #fff;
+    text-align: center;
+    padding-top: 2px;
+}
+.middle .middleLeft .mltData{
+    width: 100%;
+    height: 25%;
+    background-color: #223A66;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+.middle .middleLeft .mltData .mltTou{
+    display: flex;
+    justify-content: space-around;
+    color:#fff;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.middle .middleLeft .mltData .danger{
+    display: flex;
+    justify-content: space-around;
+    color:#C3669A;
+    font-size: 12px;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.middle .middleLeft .mltData .safe{
+    display: flex;
+    justify-content: space-around;
+    color:#77C6A1;
+    font-size: 12px;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.middle .middleLeft .mltData .mltShen>li:nth-of-type(2){
+    margin-left: 8%;
+}
+.middle .middleLeft .mltData .mltShen>li:nth-of-type(3){
+    margin-left: 8%;
+}
+.middle .middleLeft .mlHistory{
+    width: 100%;
+    height: 5%;
+    background-color:#334B72;
+}
+.middle .middleLeft .mlHistory{
+    color: #fff;
+    text-align: center;
+    padding-top: 2px;
+}
+.middle .middleLeft .mlbData{
+    width: 100%;
+    height: 58%;
+    background-color: #223A66;
+    border-radius: 0px 0px 8px 8px;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+.middle .middleLeft .mlbData .mlbTou{
+    display: flex;
+    justify-content: space-around;
+    color:#fff;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.middle .middleLeft .mlbData .mlbShen{
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    margin-left: 2%;
+    color:#fff;
+    margin-top: 2%;
+}
+.middle .middleLeft .mlbData .mlbShen>li:nth-of-type(2){
+    margin-left: 11%;
+}
+.middle .middleLeft .mlbData .mlbShen>li:nth-of-type(3){
+    margin-left: 5%;
+}
+
+.middle .middleCenter{
+    width: 49%;
+    height: 100%;
+    border: 1px solid #4473BB;
+    border-radius: 8px;
+}
+.middle .middleCenter img{
+    width: 100%;
+    height:100%;
+    border-radius: 8px;
+}
+.middle .middleRight{
+    width: 25%;
+    height: 100%;
+    border: 1px solid #4473BB;
+    border-radius: 8px;
+    background-color: #223A66;
+}
+.middle .middleRight .mrHeader{
+    width: 100%;
+    height: 20%;
+    border-radius: 8px 8px 0 0;
+    background-color: #223A66;
+    font-size: 14px;
+}
+.middle .middleRight .mrHeader p{
+    color:#1CB7D2;
+    margin-left: 15%;
+    padding-top: 2%;
+}
+.middle .middleRight .mrHeader .name{
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    padding-top: 5%;
+}
+ .mrName{
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    width: 100%;
+    height: 18%;
+    margin-bottom: 0;
+}
+ .mrName li{
+     margin-top: 6%;
+ }
+.mrName .underLoad{
+    width: 13px;
+    height: 13px;
+    border-radius: 50px;
+    border: 2px solid white;
+    background-color: #89DAAE;
+}
+.mrName .highLoad{
+    width: 13px;
+    height: 13px;
+    border-radius: 50px;
+    border: 2px solid white;
+    background-color: #C56B9A;
+}
+ .mrName>li:nth-of-type(2){
+    margin-left: -2%;
+}
+ .mrName>li:nth-of-type(3){
+    margin-left: -3%;
+}
+.middle .middleRight .mrBody{
+    width: 100%;
+    height: 80%;
+    background-color:#223A66;
+    overflow-y: auto;
+    white-space: nowrap;
+    border-radius: 0 0 8px 8px;
+    font-size: 14px;
+}
+.middle .middleRight .mrBody ul:nth-of-type(odd){ background:#00284C;}
+.middle .middleRight .mrBody ul:nth-of-type(even){ background:#244973;}
+.footer{
+    width: 100%;
+    height: 33%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+.footer #footerLeft{
+    width: 32.8%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid #4473BB;
+}
+.footer #footerCenter{
+    width: 32.8%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid #4473BB;
+}
+.footer #footerRight{
+    width: 32.8%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid #4473BB;
+}
+
+

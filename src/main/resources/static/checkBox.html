@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /**
+* 隐藏默认的checkbox
+*/
+input[type=checkbox] {
+visibility: hidden;
+}
+    /**
+* Checkbox Two
+*/
+.checkboxTwo {
+width: 120px;
+height: 40px;
+background: #333;
+margin: 20px 60px;
+ 
+border-radius: 50px;
+position: relative;
+}
+/**
+* Create the line for the circle to move across
+*/
+.checkboxTwo:before {
+content: '';
+position: absolute;
+top: 19px;
+left: 14px;
+height: 2px;
+width: 90px;
+background: #111;
+}
+/**
+* Create the circle to click
+*/
+.checkboxTwo label {
+display: block;
+width: 22px;
+height: 22px;
+border-radius: 50%;
+ 
+-webkit-transition: all .5s ease;
+-moz-transition: all .5s ease;
+-o-transition: all .5s ease;
+-ms-transition: all .5s ease;
+transition: all .5s ease;
+cursor: pointer;
+position: absolute;
+top: 9px;
+z-index: 1;
+left: 12px;
+background: #ddd;
+}
+/**
+* Create the click event for the checkbox
+*/
+.checkboxTwo input[type=checkbox]:checked + label {
+left: 84px;
+background: #26ca28;
+}
+    </style>
+</head>
+
+<body>
+    <section>
+        <!-- Checbox Two -->
+        <h3>Checkbox Two</h3>
+        <div class="checkboxTwo">
+            <input type="checkbox" value="1" id="checkboxTwoInput" name="" />
+            <label for="checkboxTwoInput"></label>
+        </div>
+    </section>
+</body>
+<!-- https://blog.csdn.net/weixin_39877717/article/details/80742785 -->
+</html>

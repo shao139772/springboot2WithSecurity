@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页测试</title>
+
+    <script src="/js/fetch.js"></script>
+    <script src="/js/jquery-3.3.1.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+
+<input id="login" onclick="startlogin();" type="button" value="登录">
+<input id="getDrone" onclick="getDrone();" type="button" value="查询无人机">
+
+<input id="version" onclick="getVersion();" type="button" value="查询版本">
+
+
+<div id="result" style="font-size: larger"></div>
+
+<script type="text/javascript">
+
+    var url = "http://192.168.1.145:8080/rf/graphql";
+
+    var token = 1;
+
+    function startlogin() {
+        console.log('login');
+        $.ajax({
+            url: 'http://192.168.1.145:8080/login',
+            type: 'post',
+            dataType: "json",
+            success: function (data) {
+                console.log('data', data);
+                token = data.token;
+                var hehie = "<font color='red'>" + JSON.stringify(data) + "</font>";
+                $("#result").html(hehie);
+            },
+            data: {
+                username: 'demo',
+                password: 'secret',
+            },
+        });
+
+
+    }
+
+
+    function getDrone() {
+        console.log('getDrone');
+    }
+
+
+    //查询版本号
+    function getVersion() {
+        console.log('getVersion');
+        $.ajax({
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + token,
+            },
+            url: url,
+            type: 'post',
+            dataType: "json",
+            success: function (data) {
+                console.log('data', data);
+                var hehie = "<font color='red'>" + JSON.stringify(data) + "</font>";
+                $("#result").html(hehie);
+            },
+            data: {
+                query: '{version}',
+            },
+        });
+    }
+
+</script>
+
+</body>
+</html>

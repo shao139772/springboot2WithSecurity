@@ -1,0 +1,285 @@
+/** 取消bootstrap格柵布局自有的padding和margin，以保证页面图片宽度与浏览器宽度保持一致 */
+.index {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+/** 上层样式 */
+.top{
+    width: 100vw;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+/** 上层-左侧样式 */
+.top_left{
+    margin-left: 10px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/** 上层-左侧-上侧样式 */
+.top_left_top{
+    width: 100%;
+    height:230px;
+    background-color: #19355c;
+}
+
+/** 上层-左侧-下侧样式 */
+.top_left_below{
+    width: 100%;
+    height:230px;
+}
+
+/** 上层-中间样式 */
+.top_middle{
+    margin-left: -5px;
+}
+
+/** 上层-右侧样式 */
+.top_right{
+    margin-left: -5px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/** 上层-右侧导航样式 */
+.navigation{
+    width: 100%;
+    height: 45px;
+    background-color: #1E9FFF;
+    box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.navigationOne{
+    width: 20%;
+    height: 45px;
+    background-color: #67c7ff;
+    text-align: center;
+}
+.navigationOne h4{
+    line-height: inherit;
+    color: #ffffff;
+}
+
+.navigationTwo{
+    width: 20%;
+    height: 45px;
+    text-align: center;
+}
+.navigationTwo h4{
+    line-height: inherit;
+    color: #000000;
+}
+.navigationThree{
+    width: 20%;
+    height: 45px;
+}
+.navigationFour{
+    width: 38%;
+    height: 45px;
+    text-align: right;
+}
+
+/** 仿苹果手机开关样式 */
+#div1{
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 12px;
+}
+#div2{
+    width: 16px;
+    height: 16px;
+    border-radius: 48px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+}
+.open1{
+    background: #46a5fe;
+}
+.open2{
+    top: 2px;
+    right: 1px;
+}
+.close1{
+    background: rgba(255,255,255,0.4);
+    border:3px solid rgba(0,0,0,0.15);
+    /*border-left: transparent;*/
+}
+.close2{
+    left: 0px;
+    top: -2px;
+    border: 2px solid rgba(0,0,0,0.1);
+}
+.div1{
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+.div2{
+    width: 16px;
+    height: 16px;
+    border-radius: 48px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+}
+.layui-form-onswitch {
+    border-color: #46a5fe;
+    background-color: #46a5fe;
+}
+
+/** 导航图标 */
+.connectImg{
+    width: 8%;
+    margin-top: 13px;
+}
+.listImg{
+    width: 8%;
+    margin-top: 13px;
+    margin-left: 15px;
+}
+.voiceImg{
+    width: 8%;
+    margin-top: 13px;
+    margin-left: 15px;
+}
+.noticeImg{
+    width: 8%;
+    margin-top: 13px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/** 表格1样式 */
+.listOne{
+    margin-bottom: 10px;
+}
+.listOne th,tr{
+    height: 45px;
+}
+.listOneCaption{
+    font-weight: 900;
+    font-size: 18px;
+    text-align: left;
+    height: 45px;
+    margin-top: 20px;
+    color: #46a5fe;
+    background-color: #19355c;
+    line-height: 46px;
+    padding-left: 20px;
+}
+
+/** 表格2样式 */
+.listTwoCaption{
+    font-weight: 900;
+    font-size: 18px;
+    text-align: left;
+    height: 45px;
+    color: #46a5fe;
+    background-color: #19355c;
+    line-height: 46px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+/** 当前页表格样式颜色更改 */
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: #f3fbfe;
+}
+
+/** 下层样式 */
+.below{
+    width: 100vw;
+    margin-left: 0px;
+}
+
+/** 下层-左侧样式 */
+.below_left{
+    margin-top: 20px;
+    margin-left: 10px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/** 下层-左侧表格样式 */
+.below_left_top{
+    width: 100%;
+    height: 258px;
+}
+
+/** 下层-中间样式 */
+.below_middle{
+    margin-left: -5px;
+}
+
+/** 下层-右侧样式 */
+.below_right{
+    margin-top: 20px;
+    margin-left: -5px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/** 下层-右侧表格样式 */
+.below_right_top{
+    width: 100%;
+    height: 258px;
+}
+
+/** 白名单列表-表头样式 */
+.whiteList{
+    height: 50px;
+    background-color: #19355c;
+    /**
+    color: #ffffff;
+     */
+    text-align: center;
+}
+.whiteList h4{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.whiteList button{
+    float: right;
+}
+
+/** 新增白名单-表头样式 */
+.addWhiteList{
+    height: 100px;
+}
+.addWhiteListOne{
+    height: 50%;
+}
+.addWhiteListOneLeft{
+    width: 50%;
+    float: left;
+}
+.addWhiteListOneRight{
+    float: right;
+}
+.addWhiteListTwo h4{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.addWhiteListTwo button{
+    float: right;
+}
+
+/** layui表格样式修整 */
+.layui-table tr {
+    background-color: #46a5fe;
+}
+
+.layui-table tbody tr:hover, .layui-table thead tr, .layui-table-click, .layui-table-header, .layui-table-hover, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table-total, .layui-table-total tr, .layui-table[lay-even] tr:nth-child(even) {
+    background-color: #46a5fe;
+}
+
+/**
+去除百度地图的logo
+ */
+.anchorBL{display:none;}
